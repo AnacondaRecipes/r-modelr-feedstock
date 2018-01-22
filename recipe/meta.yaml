@@ -10,8 +10,8 @@ package:
 source:
   fn: modelr_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/modelr_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/modelr/modelr_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/modelr_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/modelr/modelr_{{ version }}.tar.gz
   sha256: 25b95198d6aa23e28a0bd97dcdc78264ef168ae403928bff01e1ee81ca021ce7
 
 
