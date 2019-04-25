@@ -1,4 +1,4 @@
-{% set version = '0.1.2' %}
+{% set version = '0.1.4' %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -11,12 +11,13 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/modelr_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/modelr/modelr_{{ version }}.tar.gz
-  sha256: 6a9831c510967551a6064716dfd4db48b59dc056dcf1c7f1d2cce05ef0789027
+  sha256: b4da77c1244bbda512ce323751c8338741eeaa195283f172a0feec2917bcfdd9
 
 build:
   merge_build_host: True  # [win]
   # If this is a new build for the same version, increment the build number.
   number: 0
+  noarch: generic
 
   # This is required to make R link correctly on Linux.
   rpaths:
@@ -61,11 +62,12 @@ test:
     # Put any additional test requirements here.
 
 about:
-  home: https://modelr.tidyverse.org, https://github.com/hadley/modelr
+  home: https://modelr.tidyverse.org, https://github.com/tidyverse/modelr
   license: GPL-3
   summary: Functions for modelling that help you seamlessly integrate modelling into a pipeline
     of data manipulation and visualisation.
   license_family: GPL3
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
 
 extra:
   recipe-maintainers:
@@ -77,23 +79,24 @@ extra:
 
 # Package: modelr
 # Title: Modelling Functions that Work with the Pipe
-# Version: 0.1.2
-# Authors@R: c( person("Hadley", "Wickham", , "hadley@rstudio.com", role = c("aut", "cre")), person("RStudio", role = "cph") )
+# Version: 0.1.4
+# Authors@R:  c(person(given = "Hadley", family = "Wickham", role = c("aut", "cre"), email = "hadley@rstudio.com"), person(given = "RStudio", role = "cph"))
 # Description: Functions for modelling that help you seamlessly integrate modelling into a pipeline of data manipulation and visualisation.
 # License: GPL-3
-# URL: https://modelr.tidyverse.org, https://github.com/hadley/modelr
-# BugReports: https://github.com/hadley/modelr/issues
+# URL: https://modelr.tidyverse.org, https://github.com/tidyverse/modelr
+# BugReports: https://github.com/tidyverse/modelr/issues
 # Depends: R (>= 3.1)
-# Imports: broom, dplyr, magrittr, purrr (>= 0.2.2), tibble, tidyr (>= 0.8.0), rlang (>= 0.2.0)
+# Imports: broom, dplyr, magrittr, purrr (>= 0.2.2), rlang (>= 0.2.0), tibble, tidyr (>= 0.8.0)
 # Suggests: compiler, covr, ggplot2, testthat
+# Encoding: UTF-8
 # LazyData: true
-# RoxygenNote: 6.0.1.9000
+# RoxygenNote: 6.1.1
 # NeedsCompilation: no
-# Packaged: 2018-05-10 22:54:13 UTC; hadley
+# Packaged: 2019-02-18 13:48:09 UTC; hadley
 # Author: Hadley Wickham [aut, cre], RStudio [cph]
 # Maintainer: Hadley Wickham <hadley@rstudio.com>
 # Repository: CRAN
-# Date/Publication: 2018-05-11 03:23:27 UTC
+# Date/Publication: 2019-02-18 22:00:03 UTC
 
 # See
 # http://docs.continuum.io/conda/build.html for
